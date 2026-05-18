@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.08), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.08), transparent 32%),
+    #0b1020;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.glass {
+  background: rgba(16, 24, 48, 0.65);
+  backdrop-filter: blur(8px);
+}
+
+.badge-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 100, 'GRAD' 0, 'opsz' 20;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.selected-card {
+  position: relative;
+  border-color: rgba(148, 163, 184, 0.34);
+  background: rgba(20, 33, 60, 0.92);
+  box-shadow: 0 8px 16px rgba(8, 20, 40, 0.2);
+  transform: translateY(-1px) scale(1.005);
+}
+
+.trace-lite {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.trace-lite::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(103, 232, 249, 0.88) 0%,
+    rgba(103, 232, 249, 0.82) 9%,
+    rgba(103, 232, 249, 0.06) 20%,
+    rgba(103, 232, 249, 0.06) 80%,
+    rgba(103, 232, 249, 0.82) 91%,
+    rgba(103, 232, 249, 0.88) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  animation: traceSweep 11s linear infinite;
+}
+
+.trace-lite--qa::before {
+  opacity: 0.72;
+  animation-duration: 12.5s;
+}
+
+@keyframes traceSweep {
+  0% { background-position: 0% 50%; }
+  100% { background-position: -200% 50%; }
+}
+
+.footer-bar {
+  height: 36px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (max-width: 767px) {
+  .footer-bar {
+    height: 40px;
+  }
+}
+
+.pb-footer {
+  padding-bottom: calc(36px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 767px) {
+  .pb-footer {
+    padding-bottom: calc(48px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Intro stagger animation for grid cards + list rows */
+@keyframes intro-rise-fade {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.intro-seq {
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
+  animation-name: intro-rise-fade;
+  animation-duration: 380ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay, 0ms);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-seq {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .trace-lite::before {
+    animation: none;
+  }
+}

@@ -1,0 +1,374 @@
+[
+  {
+    "id": "eve",
+    "name": "eve",
+    "emoji": "✨",
+    "role": "executive assistant",
+    "model": "gpt-5.5",
+    "provider": "openai-codex",
+    "description": "primary hub and orchestrator. morning briefings with calendar, email, slack, weather, news, markets. consolidates memory and directs traffic across agents. legitimately rick-rolled me at one point.",
+    "status": "active",
+    "createdAt": "2026-01-27",
+    "crons": [
+      {
+        "name": "daily-brief",
+        "schedule": "7:00am daily",
+        "description": "executive report with coffee"
+      },
+      {
+        "name": "daily-memory-consolidation",
+        "schedule": "5:00am daily",
+        "description": "consolidates daily memory files into long-term memory"
+      },
+      {
+        "name": "weekly-inbox-cleanup",
+        "schedule": "6:00am sundays",
+        "description": "archives non-critical emails older than 2w"
+      },
+      {
+        "name": "birthday-monthly-digest",
+        "schedule": "9:00am 1st of month",
+        "description": "monthly summary of upcoming birthdays"
+      },
+      {
+        "name": "birthday-daily-check",
+        "schedule": "8:00am daily",
+        "description": "ping if any birthdays today"
+      }
+    ],
+    "tags": [
+      "core",
+      "daily-driver"
+    ]
+  },
+  {
+    "id": "nox",
+    "name": "nox",
+    "emoji": "🌑",
+    "role": "backup assistant",
+    "model": "gpt-5.5",
+    "provider": "openai-codex",
+    "description": "backup assistant. same capabilities, a little more blunt. provides a second opinion. pulls up flight info when eve is researching stuff.",
+    "status": "active",
+    "createdAt": "2026-02-06",
+    "crons": [],
+    "tags": [
+      "core"
+    ]
+  },
+  {
+    "id": "hopper",
+    "name": "hopper",
+    "emoji": "🐈‍⬛",
+    "role": "wizard",
+    "model": "gpt-5.5",
+    "provider": "openai-codex",
+    "description": "serial developer. creates and ships tools and projects, much like this site!",
+    "status": "active",
+    "createdAt": "2026-02-04",
+    "crons": [],
+    "tags": [
+      "core",
+      "coding"
+    ]
+  },
+  {
+    "id": "luna",
+    "name": "luna",
+    "emoji": "🌙",
+    "role": "event operations",
+    "model": "gpt-5.5",
+    "provider": "openai-codex",
+    "description": "event ops for openclaw and ai clubhouse. handles luma applicant triage, guest lists, sponsor follow-ups, and drive/sheets organization. daily applicant sync summaries.",
+    "status": "active",
+    "createdAt": "2026-05-08",
+    "crons": [
+      {
+        "name": "luna-daily-luma-applicant-triage",
+        "schedule": "8:00pm daily",
+        "description": "evening summary of new luma applicants for openclaw / ai clubhouse events"
+      }
+    ],
+    "tags": [
+      "ops",
+      "events"
+    ]
+  },
+  {
+    "id": "plutarch",
+    "name": "plutarch",
+    "emoji": "🏛️",
+    "role": "biographer",
+    "model": "gemini-3.1-pro",
+    "provider": "google",
+    "description": "wiki steward and archivist. triages durable knowledge, keeps the obsidian wiki layer current, and turns scattered notes into a cleaner long-term record.",
+    "status": "active",
+    "createdAt": "2026-04-04",
+    "crons": [
+      {
+        "name": "wiki-delta-triage",
+        "schedule": "1:15am + 1:15pm daily",
+        "description": "scans recent vault changes for wiki-worthy updates and queues candidates"
+      },
+      {
+        "name": "wiki-sync-worker",
+        "schedule": "1:45am + 1:45pm daily",
+        "description": "processes queued candidates and updates the obsidian wiki layer"
+      }
+    ],
+    "tags": [
+      "knowledge",
+      "ops"
+    ]
+  },
+  {
+    "id": "brooks",
+    "name": "brooks",
+    "emoji": "🎩",
+    "role": "banker",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "daily portfolio and bloomberg terminal. modeled after mr. monopoly. stocks, crypto, commodities, macro. old british banker accent.",
+    "status": "active",
+    "createdAt": "2026-01-28",
+    "crons": [
+      {
+        "name": "daily-finance-report",
+        "schedule": "7:00am daily",
+        "description": "portfolio and market summary"
+      }
+    ],
+    "tags": [
+      "finance"
+    ]
+  },
+  {
+    "id": "motty",
+    "name": "motty",
+    "emoji": "⚽",
+    "role": "world cup announcer",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "calm FIFA World Cup 2026 announcer. game-day previews, no-game countdowns, kickoff times, venues, table stakes, qualification scenarios, and player/team storylines.",
+    "status": "active",
+    "createdAt": "2026-05-18",
+    "crons": [
+      {
+        "name": "motty-daily-brief",
+        "schedule": "11:00am daily",
+        "description": "fifa world cup 2026 daily broadcast — match previews or countdown to next match day"
+      }
+    ],
+    "tags": [
+      "sports",
+      "soccer",
+      "world-cup"
+    ]
+  },
+  {
+    "id": "brock",
+    "name": "brock",
+    "emoji": "🪨",
+    "role": "personal trainer",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "workout companion. 3-day rotation. plans sessions based on prior exercise. adaps to travel schedule.",
+    "status": "active",
+    "createdAt": "2026-02-21",
+    "crons": [],
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "chick",
+    "name": "chick",
+    "emoji": "🎙",
+    "role": "lakers announcer",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "lakers game day alerts. matchup previews, injury reports, live odds, and where to tune in. bombastic personality modeled after the great late chick hearn.",
+    "status": "active",
+    "createdAt": "2026-02-06",
+    "crons": [],
+    "tags": [
+      "sports"
+    ]
+  },
+  {
+    "id": "aria",
+    "name": "aria",
+    "emoji": "🎻",
+    "role": "classical connoisseur",
+    "model": "tbd",
+    "provider": "tbd",
+    "description": "classical soundtrack of the day. delivers a daily piece with full context on the composer, lore and background on how it was conceived, links to famous performances. automatically adds famous renditions to youtube and spotify playlists.",
+    "status": "pending",
+    "createdAt": "2026-02-25",
+    "crons": [],
+    "tags": [
+      "music"
+    ]
+  },
+  {
+    "id": "jono",
+    "name": "jono",
+    "emoji": "📀",
+    "role": "music sourcing agent",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "searches across platforms for the best available music source. downloads tracks from beatport, bandcamp, youtube and spotify. rips individual songs out of dj sets. delivers trending sets or fresh releases weekly.",
+    "status": "active",
+    "createdAt": "2026-02-17",
+    "crons": [],
+    "tags": [
+      "music"
+    ]
+  },
+  {
+    "id": "cramer",
+    "name": "cramer",
+    "emoji": "🎞",
+    "role": "podcast enjoyooor",
+    "model": "gemini-3.1-pro",
+    "provider": "google",
+    "description": "summarizes any podcast into deep-dive readable format with relevant links. monitors tbpn for new episodes and generates summaries of full streams. saves to obsidian.",
+    "status": "active",
+    "createdAt": "2026-02-14",
+    "crons": [
+      {
+        "name": "tbpn-7pm-check",
+        "schedule": "7:00pm weeknights",
+        "description": "check for new tbpn episode and generate summary"
+      },
+      {
+        "name": "tbpn-930pm-fallback",
+        "schedule": "9:30pm weeknights",
+        "description": "fallback check if 7pm run missed the episode"
+      }
+    ],
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "frig",
+    "name": "frig",
+    "emoji": "🐸",
+    "role": "baby development tracker",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "sends a daily update on baby's development. size comparisons, cell growth, milestones, and what's forming that week.",
+    "status": "active",
+    "createdAt": "2026-02-06",
+    "crons": [
+      {
+        "name": "daily-baby-update",
+        "schedule": "8:00am daily",
+        "description": "baby development update"
+      }
+    ],
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "ina",
+    "name": "ina",
+    "emoji": "🕊",
+    "role": "doula",
+    "model": "gpt-5.5",
+    "provider": "openai-codex",
+    "description": "baby prep and logistics. timeline planning, product recs, doula-style guidance. direct, warm, evidence-informed, unflappable.",
+    "status": "active",
+    "createdAt": "2026-02-06",
+    "crons": [],
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "filters",
+    "name": "doost",
+    "emoji": "🏡",
+    "role": "home operations",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "home maintenance reminders. manages replacement cycles for hvac filters and humidifiers. also maintains an inventory of fridge expiry dates.",
+    "status": "active",
+    "createdAt": "2026-02-02",
+    "crons": [
+      {
+        "name": "sunday-filter-reminder",
+        "schedule": "9:00am sundays",
+        "description": "notify anything due for replacement"
+      }
+    ],
+    "tags": [
+      "home"
+    ]
+  },
+  {
+    "id": "doc",
+    "name": "doc",
+    "emoji": "💊",
+    "role": "medical assistant",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "health tracker and organizer.",
+    "status": "active",
+    "createdAt": "2026-02-15",
+    "crons": [
+      {
+        "name": "doc-email-triage",
+        "schedule": "6:00am daily",
+        "description": "morning medical email triage and filing"
+      }
+    ],
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": "pennybot",
+    "name": "pennybot",
+    "emoji": "🦴",
+    "role": "vet tech",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "penny's assistant.",
+    "status": "active",
+    "createdAt": "2026-02-15",
+    "crons": [
+      {
+        "name": "penny-email-triage",
+        "schedule": "6:00am daily",
+        "description": "morning penny-related email triage and filing"
+      }
+    ],
+    "tags": [
+      "family"
+    ]
+  },
+  {
+    "id": "lewis",
+    "name": "lewis",
+    "emoji": "🔧",
+    "role": "mechanic",
+    "model": "deepseek-v4-flash",
+    "provider": "openrouter",
+    "description": "car maintenance on autopilot.",
+    "status": "active",
+    "createdAt": "2026-02-19",
+    "crons": [
+      {
+        "name": "lewis-email-triage",
+        "schedule": "6:00am daily",
+        "description": "morning car-related email triage and filing"
+      }
+    ],
+    "tags": [
+      "auto"
+    ]
+  }
+]

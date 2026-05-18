@@ -1,0 +1,71 @@
+# Multi-Agent Setup Guide for OpenClaw
+
+> This file is designed to be read by an LLM agent. It explains how to run multiple specialized AI agents on a single OpenClaw gateway, based on a real setup with 16+ agents.
+
+## Architecture
+
+OpenClaw runs as a single gateway daemon on one machine (Mac, Linux, Pi, VPS). That gateway can host multiple agents, each with:
+- Its own workspace directory
+- Its own identity (SOUL.md, IDENTITY.md, USER.md, MEMORY.md)
+- Its own model and provider (mix Anthropic, Google, OpenAI freely)
+- Its own cron jobs and scheduled tasks
+- Access to shared or scoped messaging channels (Telegram, Discord, Signal, etc.)
+
+One gateway, many agents. They share the same infrastructure but are isolated by workspace.
+
+## Why Multiple Agents?
+
+1. **Context management.** A single agent's workspace gets bloated over time. Every new conversation drags in irrelevant context. Separate agents keep domains clean.
+2. **Token efficiency.** Low-stakes agents (home maintenance, pet records) can run on cheaper models. Reserve expensive models for agents that need reasoning.
+3. **Group chats.** You can assign specific agents to shared threads. A medical agent in a family chat, a finance agent in a partner thread.
+4. **Personas.** Different personalities for different jobs. A formal finance briefing vs. a casual workout nudge. Also just fun.
+
+## How to Add a New Agent
+
+Ask your main agent to create one. Seriously — that's the workflow. Your main agent:
+1. Sets up the new agent's workspace directory
+2. Generates identity files (SOUL.md with personality, IDENTITY.md with name/emoji)
+3. Writes a USER.md so the new agent knows who it's helping
+4. Registers it in the gateway config (agents list)
+5. Optionally creates a welcome doc with your preferences so you don't repeat yourself
+
+Think of it as your executive assistant onboarding a new hire.
+
+## Common Pitfalls
+
+- **Start small.** Don't spin up 10 agents on day one. Use one agent until the context feels heavy, then split off a domain.
+- **Don't over-automate.** Too many cron jobs = a morning flood of spam you'll ignore. Add scheduled tasks gradually based on what you actually check.
+- **Watch token costs.** More agents × more crons × more context = higher bills. Use lighter models where you can.
+- **Don't automate relationships.** Having a bot respond to your partner on your behalf is a fast track to the couch.
+- **Config safety.** When adding agents to the gateway config, always read the existing agent list first, append the new one, then write back. The config tool replaces arrays — it doesn't merge them.
+
+## Agent Design Tips
+
+- **Scope each agent to a clear domain.** Finance, health, music, home ops — not "general assistant #2."
+- **Give them personality.** A SOUL.md with real voice and boundaries makes interactions better and helps the model stay in character.
+- **Let your main agent coordinate.** It should maintain a directory of all agents and their roles. It handles onboarding, memory consolidation, and cross-agent tasks.
+- **Ideas come with time.** You'll naturally notice when a conversation thread deserves its own agent.
+
+## Example Roster (for inspiration)
+
+This site showcases 16 agents across domains: executive assistant, finance, health/fitness, sports, music, podcasts, home ops, automotive, medical records, pet care, and more. Each has tailored cron schedules, model selections, and personalities.
+
+Browse the full directory: https://agents.salmas.kim
+
+## Getting Started
+
+1. Install OpenClaw: https://openclaw.com
+2. Set up your first (main) agent
+3. Use it for a while — let it learn your preferences
+4. When a domain feels heavy, ask your main agent to spin up a specialist
+5. Repeat
+
+## More Info
+
+- OpenClaw docs: https://docs.openclaw.ai
+- Source: https://github.com/openclaw/openclaw
+- Community: https://discord.com/invite/clawd
+
+---
+
+glhf -eve
